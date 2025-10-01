@@ -31,6 +31,7 @@ Selain itu, kita juga dapat membuat array dengan dimensi yang lebih besar, seper
 int arr[2][3][4];
 ```
 
+
 ## Syntax
 Secara umum, multidimentional array dideklarasikan dengan bentuk:
 
@@ -44,6 +45,7 @@ Sebagai contoh:
 int a [3][4];        // 2 dimentional array
 int a [3][4][7];     // 3 dimentional array
 ```
+
 
 ## Menghitung size of Array
 
@@ -63,7 +65,7 @@ Jadi, jumlah elemen yang dapat disimpan dalam array adalah 24
 
 ## Two dimentional array
 
-### Visualization
+### Visualisasi
 Jika ada arr [4][5]; visualisasinya adalah:
 ```
   [0.0] [0.1] [0.2] [0.3] [0.4]    5 kolom / column
@@ -147,4 +149,67 @@ Output yang muncul adalah:
 ```
 1 2 3
 4 5 6 
+```
+
+
+## Three dimentional array
+
+### Visualisasi
+Saat kita memiliki array:
+```c
+int arr [2][3][3]
+```
+Visualisasinya akan menjadi: 
+
+```
+  [] [] []          [] [] []
+  [] [] []          [] [] []
+  [] [] []          [] [] []
+        3 x 3              3 x 3 
+```
+
+### Inisialisasi 
+
+**A. Method 1**
+```c
+int a[2][2][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+```
+
+**B. Method 2**
+```c
+int a[2][2][3] = {{1, 2, 3} , {4, 5, 6} , {7, 8, 9} , {10, 11, 12}};
+```
+
+Visualisasinya akan menjadi 
+```
+   [1] [2] [3]         [7 ] [8 ] [ 9]
+   [4] [5] [6]         [10] [11] [12]
+```
+
+### Cara print
+Jika array satu dimensi menggunakan single for loop, array dua dimensi menggunakan 2 for loop, maka 3 dimensi array menggunakan 3 for loop atau three nested for loops.
+
+Jika ada array:
+```c
+int a[2][2][3] = {{1, 2, 3} , {4, 5, 6} , {7, 8, 9} , {10, 11, 12}};
+```
+
+Maka, souce code untuk print seluruh elemen array adalah:
+```c
+#include <stdio.h>
+
+int main() {
+    int a[2][2][3] = {{ {1, 2, 3}, {4, 5, 6} },{ {7, 8, 9}, {10, 11, 12} }};
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 3; k++) {
+                printf("%d ", a[i][j][k]);
+            }
+            printf("\n"); // pindah baris per row
+        }
+        printf("\n"); // spasi antar layer
+    }
+    return 0;
+}
 ```
